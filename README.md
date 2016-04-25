@@ -6,5 +6,5 @@ Giảng viên commit tài liệu dùng chung cho học viên.
 
 Hãy tuân thủ nội quy và cùng giúp đỡ nhau để học hiệu quả nhất.
 
-Group FB: fb.com/groups/pythonvn
-Forum Python : Python Việt Nam
+http://pythonvietnam.info
+Email: info@pythonvietnam.info
