@@ -1,47 +1,50 @@
 **List command a lession meetup**
 
+
 **_Lession 1_**
-1. Create folder project
 
-+ _$mkdir myproject_
+``Create folder project``
 
-2. Install environment
+* _$mkdir myproject_
 
-+ _$ virtualenv env_
+``Install environment``
 
-+ _$ source env/bin/active_
+* _$ virtualenv env_
 
-+ _$ pip install -r requirement.txt_
+* _$ source env/bin/active_
 
-3. Create project
+* _$ pip install -r requirement.txt_
 
-+ _$django-admin startproject djangoblog_
-4. Create apps
+``Create project``
 
-+ _$cd djangoblog_
+* _$django-admin startproject djangoblog_
 
-+ _$python manage.py startapp article_
+``Create apps``
 
-+ _$python manage.py startapp category_
+* _$cd djangoblog_
 
-+ _$python manage.py startapp contact_
+* _$python manage.py startapp article_
 
-5. Makemigrations
+* _$python manage.py startapp category_
 
-+ _$python manage.py makemigrations_
+* _$python manage.py startapp contact_
 
-6. Migrate
+``Makemigrations``
 
-+ _$python manage.py migrate_
+* _$python manage.py makemigrations_
 
-7. Run Server
+``Migrate``
 
-+ _$python manage.py runserver_
+* _$python manage.py migrate_
 
-8. Django shell
+``Run Server``
 
-+ _$python manage.py shell_
+* _$python manage.py runserver_
 
-9. Create superuser
+``Django shell``
 
-+ _$python manage.py createsuperuser_
+* _$python manage.py shell_
+
+``Create superuser``
+
+* _$python manage.py createsuperuser_
