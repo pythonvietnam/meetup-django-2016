@@ -1,19 +1,19 @@
-**Install Environment**
+## Install Environment
 
-``Install MysqlLdb``
+Install MysqlLdb
 
 * With Ubuntu/Debian, you must install package: _**libmysqlclient-dev**_
 
-* How: _$sudo apt-get install libmysqlclient-dev_
+* How: ``$sudo apt-get install libmysqlclient-dev``
 
 * Then install MysqlLdb by pip
 
-``Install Django and other package``
+Install Django and other package
 
 * I'm using virtualenv
 
-* Create virtualenv: _$virtualenv env_
+* Create virtualenv: ``$virtualenv env``
 
-* You need active virtualenv: _$source env/bin/active_
+* You need active virtualenv: ``$source env/bin/active``
 
-* Install Django: _$pip install -r requirement.txt_
+* Install Django: ``$pip install -r requirement.txt``
