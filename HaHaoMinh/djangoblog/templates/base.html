@@ -1,0 +1,42 @@
+{% load staticfiles %}
+<head>
+    {% block extra_head %}
+    <!-- for anything else inside head -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% endblock extra_head %}
+
+    {% block extra_title %}
+    <title>{% block head_title %}Blog Django{% endblock head_title %}</title>
+    {% endblock extra_title %}
+
+    <!-- Some stuff here which should be included in all templates for example js or css -->
+    {% block extra_css %}
+    <link rel="stylesheet" href='{% static "css/style.css" %}'>
+    <link rel="stylesheet" href='{% static "css/bootstrap.min.css" %}'>
+    <link rel="stylesheet" href='{% static "css/bootstrap-theme.min.css" %}'>
+    <!-- to included app-template dependent css -->
+    {% endblock extra_css %}
+
+    {% block extra_js %}
+    <!-- to included app-template dependent js -->
+    <script type="text/javascript" src='{% static "js/jquery-1.10.2.js" %}'></script>
+    <script type="text/javascript" src='{% static "js/bootstrap.min.js" %}'></script>
+    {% endblock extra_js %}
+</head>
+<body>
+{% block menu %}
+<!-- Default menu here -->
+{% block extra_menu %}
+<!-- extend menu based on template -->
+{% endblock extra_menu %}
+{% endblock menu %}
+
+{% block content %}
+{% endblock content %}
+
+{% block bottom_js %}
+<!-- if you want to have manual js scripts at bottom -->
+{% endblock bottom_js %}
+</body>
+
