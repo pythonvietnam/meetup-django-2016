@@ -7,3 +7,6 @@ class Article(models.Model):
     slug      =  models.SlugField(blank=False,  max_length=255)
     content   =  models.TextField()
     category  =  models.ForeignKey(Category)
+
+    def __str__(self):
+        return self.name
