@@ -13,12 +13,12 @@ def contact_form(request):
     if request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid():
-            to_email = request.POST.get('email', '')
+            from_email = request.POST.get('email', '')
             subject = request.POST.get('subject', '')
             message = request.POST.get('message', '')
 
-            email_contact = "<" + to_email + ">"
-            email = EmailMessage(subject, message, email_contact, to=[to_email])
+            content = "From: %s.\nMessage: %s" % (from_email, message)
+            email = EmailMessage(subject, content, to=['minhhahao@gmail.com'])
             email.send()
             messages.success(request, "Sending contact success!")
             return render(request, 'contact_form_sent.html')

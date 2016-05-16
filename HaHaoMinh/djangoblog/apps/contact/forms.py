@@ -1,11 +1,11 @@
 from django import forms
 
-from .models import Contact
+from .models import ContactModel
 
 
 class ContactForm(forms.ModelForm):
     class Meta:
-        model = Contact
+        model = ContactModel
         fields = {
             "email",
             "subject",

@@ -23,6 +23,8 @@ admin.autodiscover()
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^contact/', include('apps.contact.urls', namespace='contact')),
+    url(r'^user/', include('apps.users.urls', namespace='user')),
+    url(r'^articles/', include('apps.article.urls', namespace='articles')),
 
 ]
 

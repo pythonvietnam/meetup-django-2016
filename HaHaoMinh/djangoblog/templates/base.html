@@ -12,9 +12,9 @@
 
     <!-- Some stuff here which should be included in all templates for example js or css -->
     {% block extra_css %}
-    <link rel="stylesheet" href='{% static "css/style.css" %}'>
     <link rel="stylesheet" href='{% static "css/bootstrap.min.css" %}'>
     <link rel="stylesheet" href='{% static "css/bootstrap-theme.min.css" %}'>
+    <link rel="stylesheet" href='{% static "css/style.css" %}'>
     <!-- to included app-template dependent css -->
     {% endblock extra_css %}
 
@@ -25,6 +25,7 @@
     {% endblock extra_js %}
 </head>
 <body>
+{% include "message_display.html" %}
 {% block menu %}
 <!-- Default menu here -->
 {% block extra_menu %}
@@ -38,5 +39,6 @@
 {% block bottom_js %}
 <!-- if you want to have manual js scripts at bottom -->
 {% endblock bottom_js %}
+
 </body>
 

@@ -29,6 +29,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'apps.users',
     'apps.contact',
     'apps.article',
     'apps.category',
@@ -38,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'captcha'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -80,9 +82,14 @@ WSGI_APPLICATION = 'djangoblog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS': {
-            'read_default_file': 'djangoblog/db.cnf',
-        },
+        'NAME': 'djangoblog',
+        'USER': 'minhha',
+        'PASSWORD': 'haminh',
+        'PORT': '3306',
+        'HOST': 'localhost',
+        # 'OPTIONS': {
+        #     'read_default_file': 'db.cnf'
+        # }
     }
 }
 
@@ -126,8 +133,6 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
     # '/var/www/static/',
 ]
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn")
-MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media_cdn")
 
 # Email settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
