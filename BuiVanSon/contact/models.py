@@ -6,3 +6,6 @@ class Contact(models.Model):
     title      =  models.CharField(blank=False,   max_length=255)
     email      =  models.EmailField(blank=False,  max_length=255)
     content    =  models.TextField()
+
+    def __str__(self):
+        return self.name
