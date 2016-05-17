@@ -17,3 +17,8 @@ Install Django and other package
 * You need active virtualenv: ``$source env/bin/active``
 
 * Install Django: ``$pip install -r requirement.txt``
+
+* List package should be install:
+
+    * libjpeg-dev
+

@@ -1,13 +1,19 @@
 {% extends "base.html" %}
 
 {% block head_title %}
-    {{ instance.title }} | {{ block.super }}
+{{ instance.name }} | {{ block.super }}
 {% endblock head_title %}
 
 {% block content %}
-    <h1>{{ title }}</h1>
-    {{ instance.id }} <br>
-    {{ instance.title }} <br>
-    {{ instance.content }} <br>
-    {{ instance.timestamp }} <br>
+<div class="col-lg-2">
+    <h1>{{ name }}
+        <small> {{ instance.timestamp }} <br>
+        </small>
+    </h1>
+    {% if instance.image %}
+    <img src='{{ instance.image.url }}' alt={{ name }} class="img-responsive">
+    {% endif %}
+    <br>
+    {{ instance.content|linebreaks}} <br>
+</div>
 {% endblock content %}

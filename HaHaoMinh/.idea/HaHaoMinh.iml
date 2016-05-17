@@ -5,7 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/djangotutorial" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/djangoblog" isTestSource="false" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="Python 2.7.9 (/usr/bin/python2.7)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="PyDocumentationSettings">
@@ -15,6 +15,8 @@
     <option name="TEMPLATE_FOLDERS">
       <list>
         <option value="$MODULE_DIR$/env/lib/python2.7/site-packages/django/contrib/gis/templates" />
+        <option value="$MODULE_DIR$/djangoblog/apps/contact/templates" />
+        <option value="$MODULE_DIR$/djangoblog/apps/article/templates" />
       </list>
     </option>
   </component>

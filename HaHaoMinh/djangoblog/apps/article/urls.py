@@ -14,5 +14,5 @@ urlpatterns = [
     url(r'^create/$', article_create, name="article_create"),
     url(r'(?P<id>\d+)/$', article_detail, name="article_detail"),
     url(r'(?P<id>\d+)/edit/$', article_update, name="article_update"),
-    url(r'(?P<id>\d+)/delete/$', article_delete, name="article_delete"),
+    url(r'(?P<id>\d+)/ delete/$', article_delete, name="article_delete"),
 ]

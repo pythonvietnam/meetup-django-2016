@@ -1,1 +1,4 @@
 django
+django-simple-captcha
+pillow
+django-autoslug

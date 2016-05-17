@@ -8,7 +8,7 @@ from .forms import ArticleForm
 
 
 def article_list(request):
-    queryset = ArticleModel.objects.all()
+    queryset = ArticleModel.objects.all().order_by("-timestamp")
     context = {
         "object_list": queryset,
         "name": "LIST ARTICLE"
@@ -19,7 +19,7 @@ def article_list(request):
 def article_create(request):
     if request.method == 'POST':
 
-        form = ArticleForm(request.POST)
+        form = ArticleForm(request.POST or None, request.FILES or None)
         print(request.POST)
         if form.is_valid():
             instance = form.save(commit=False)
@@ -49,7 +49,7 @@ def article_detail(request, id=None):
 
 def article_update(request, id=None):
     instance = get_object_or_404(ArticleModel, id=id)
-    form = ArticleForm(request.POST or None, instance=instance)
+    form = ArticleForm(request.POST or None, request.FILES or None, instance=instance, )
     if form.is_valid():
         instance = form.save(commit=False)
         instance.save()

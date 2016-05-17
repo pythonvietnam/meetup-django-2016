@@ -51,7 +51,7 @@ Create apps
 Makemigrations
 
 ``
-  $python manage.py makemigrations
+      $python manage.py makemigrations
 ``
 
 Migrate

@@ -3,11 +3,15 @@
 <h1>{{ name }} is working</h1>
 <p>Parent page</p>
 {% for i in object_list %}
+{% if i.image %}
+<img src='{{ i.image.url }}' alt={{ name }} class="img-responsive">
+{% endif %}
 <!--detail url is /articles/id-->
 <!--<a href={% url "articles:article_detail" id=i.id %}>{{ i.id }} <br></a>-->
 <!--<a href={% url "articles:article_detail" id=i.id %}>{{ i.title }} <br><br></a>-->
 <a href={{ i.get_absolut_url }}>{{ i.id }} </a><br>
 <a href={{ i.get_absolut_url }}>{{ i.title }} </a><br>
+{{ i.image }} <br>
 {{ i.content }} <br>
 {{ i.timestamp }} <br>
 {% endfor %}
