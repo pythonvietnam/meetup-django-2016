@@ -11,4 +11,5 @@ class ArticleForm(forms.ModelForm):
             "image",
             "content",
             "category",
+            "draft",
         }

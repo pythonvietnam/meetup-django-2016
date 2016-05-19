@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load urlify %}
 
 {% block head_title %}
 {{ instance.name }} | {{ block.super }}
@@ -6,14 +7,43 @@
 
 {% block content %}
 <div class="col-lg-2">
-    <h1>{{ name }}
-        <small> {{ instance.timestamp }} <br>
-        </small>
-    </h1>
+    <h1>{{ name }}</h1>
+    <p>
+        <strong>Publish:</strong>
+        {% if instance.draft %}
+        <span style="color: red">Draft</span>
+        {% endif %}
+        <i>{{ instance.publish }}</i>
+    </p>
+
     {% if instance.image %}
     <img src='{{ instance.image.url }}' alt={{ name }} class="img-responsive">
     {% endif %}
     <br>
-    {{ instance.content|linebreaks}} <br>
+    <!--{{ instance.content| urlify}} <br>-->
+    {{ instance.content}} <br>
+    <!--{{ instance.content|truncatechars:30|urlify}} <br>-->
+    <!--<h2> {{ share_string }} </h2>-->
+
+    <!--{{ share_string }}-->
+    <div class="sharing">
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}">
+            Facebook
+        </a>
+        <a href="https://twitter.com/home?status={{ instance.content|truncatechars:30|urlify}}%20{{ request.build_absolute_uri }}">
+            Twitter
+        </a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ request.build_absolute_uri }}&title={{ instance.name }}&summary={{ share_string }}&source=http://swiftforentrepreneurs.com/">
+            Linkedin
+        </a>
+        <a href="http://www.reddit.com/submit?url={{ request.build_absolute_uri }}&title={{ instance.name }}">Reddit</a>
+    </div>
+    <br>
+    <div class="fb-like" data-href="{{ request.build_absolute_uri }}" data-layout="standard" data-action="recommend"
+         data-show-faces="true" data-share="true"></div>
+    <br>
+    <div class="fb-comments" data-href="{{ request.build_absolute_uri }}"
+         data-numposts="5"></div>
 </div>
+
 {% endblock content %}
