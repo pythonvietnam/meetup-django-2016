@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from django.contrib import messages
 from django.core.mail import EmailMultiAlternatives
 from datetime import datetime
-
+from django.conf import settings
 from .forms import CareerForm
 from .models import Career
 
@@ -32,7 +32,7 @@ class CareerViews(View):
     if form.is_valid():
       subject = "%s send CV" % request.POST.get('fullname', '')
       from_email = request.POST.get('email', '')
-      to = 'minhhahao@gmail.com'
+      to = settings.EMAIL_TO
       html_content = CareerViews.get_html_email(request.POST, request.FILES)
 
       attachment = request.FILES['attachment']
