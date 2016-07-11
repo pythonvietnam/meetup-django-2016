@@ -1,2 +1,2 @@
 django
-PyDrive
+django-simple-captcha

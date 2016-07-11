@@ -34,6 +34,7 @@ class CareerViews(View):
       from_email = request.POST.get('email', '')
       to = 'minhhahao@gmail.com'
       html_content = CareerViews.get_html_email(request.POST, request.FILES)
+
       attachment = request.FILES['attachment']
       filename = attachment.name
 
